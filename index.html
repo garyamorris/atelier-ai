@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier AI — A Visual Journey from ChatGPT to Desktop Codex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <div class="app-shell">
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+      <button class="brand-btn" id="brand-home-btn" aria-label="Back to Studio Map">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="9" fill="#231E29"/>
+            <path d="M14 5.5L16.3 11.7L22.5 14L16.3 16.3L14 22.5L11.7 16.3L5.5 14L11.7 11.7L14 5.5Z" fill="#F2B866"/>
+            <circle cx="20.5" cy="7.5" r="2" fill="#E47C6A"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>Atelier AI</strong>
+          <span class="brand-sub">Visual Studio Guide</span>
+        </span>
+      </button>
+
+      <!-- Visual Chapter Stepper -->
+      <nav class="chapter-stepper" id="chapter-stepper" aria-label="Course chapters"></nav>
+
+      <!-- Right Controls -->
+      <div class="top-controls">
+        <div class="spark-pill" id="spark-pill" title="Sparks earned by completing interactive checks">
+          <span class="spark-icon">✦</span>
+          <span id="spark-count">0</span><span class="spark-total">/6</span>
+        </div>
+        <button class="icon-pill" id="sound-toggle" aria-label="Toggle gentle sound effects" title="Sound effects">
+          <span id="sound-icon">🔊</span>
+        </button>
+        <button class="cheatsheet-btn" id="open-cheatsheet-btn">
+          <span>📋</span>
+          <span class="btn-label">Cheat Sheet</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Interactive Stage -->
+    <main class="stage-wrapper" id="stage-wrapper">
+      <div class="stage" id="stage" aria-live="polite"></div>
+    </main>
+
+    <!-- Bottom Chapter Navigation -->
+    <footer class="bottom-nav" id="bottom-nav">
+      <button class="nav-btn nav-prev" id="nav-prev-btn">
+        <span>←</span>
+        <span id="nav-prev-label">Back</span>
+      </button>
+      <div class="nav-center-hint" id="nav-center-hint"></div>
+      <button class="nav-btn nav-next" id="nav-next-btn">
+        <span id="nav-next-label">Next Chapter</span>
+        <span>→</span>
+      </button>
+    </footer>
+  </div>
+
+  <!-- Slide-over Cheat Sheet Drawer -->
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="cheatsheet-drawer" id="cheatsheet-drawer" aria-label="Desktop Codex Cheat Sheet" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow">Quick Reference</span>
+        <h2>Your Codex Studio Cheat Sheet</h2>
+      </div>
+      <button class="close-drawer-btn" id="close-cheatsheet-btn" aria-label="Close Cheat Sheet">✕</button>
+    </div>
+    <div class="drawer-body" id="cheatsheet-content"></div>
+  </aside>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts (standard script tags so double-clicking index.html works seamlessly via file://) -->
+  <script src="js/sound.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/chapters/ch0-welcome.js"></script>
+  <script src="js/chapters/ch1-tokens.js"></script>
+  <script src="js/chapters/ch2-attention.js"></script>
+  <script src="js/chapters/ch3-hallucinations.js"></script>
+  <script src="js/chapters/ch4-agents.js"></script>
+  <script src="js/chapters/ch5-codex-tour.js"></script>
+  <script src="js/chapters/ch6-simulator.js"></script>
+  <script src="js/cheatsheet.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
